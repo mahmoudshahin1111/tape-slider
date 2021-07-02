@@ -1,0 +1,39 @@
+{
+  "name": "tap-slider",
+  "version": "0.1.0",
+  "description": "add slider tap for your site",
+  "main": "./",
+  "scripts": {
+    "test": "jest ./dist",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahmoudshahin1111/tape-slider.git"
+  },
+  "keywords": [
+    "tape-slider",
+    "tape-news",
+    "slider",
+    "news-slider"
+  ],
+  "author": "mahmoudshahin1111@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mahmoudshahin1111/tape-slider/issues"
+  },
+  "homepage": "https://github.com/mahmoudshahin1111/tape-slider#readme",
+  "dependencies": {
+    "@types/jquery": "^3.5.5",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.3",
+    "ts-loader": "^9.2.3",
+    "typescript": "^4.3.5",
+    "webpack": "^5.42.0",
+    "webpack-cli": "^4.7.2"
+  }
+}
