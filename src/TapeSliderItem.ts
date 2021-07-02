@@ -8,7 +8,7 @@ export class TapeSliderItem implements IParseable {
     }
     makeElementNode(): HTMLElement {
         const node = document.createElement('span');
-        node.setAttribute('class','.ts-tapeSlider-item');
+        node.setAttribute('class','ts-tapeSlider-item');
         return node;
     }
     parse(): HTMLElement {

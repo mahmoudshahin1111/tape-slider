@@ -3,7 +3,9 @@ import { IParseable } from './contract/IParseable';
 import { ITapeSliderData } from './api/ITapeSliderData';
 import { TapeSliderItem } from './TapeSliderItem';
 import { ITapeSliderOptions } from './api/ITapeSliderOptions';
+import * as rxJs from 'rxjs';
 export class TapeSlider implements IParseable {
+    private tapeSliderNodeRef:HTMLElement;
     private options: ITapeSliderOptions;
     private selector: string;
     private tapeContainerEl: JQuery<HTMLElement>;
@@ -21,7 +23,8 @@ export class TapeSlider implements IParseable {
 
     }
     render() {
-        this.tapeContainerEl.append(this.parse());
+        this.tapeSliderNodeRef = this.parse();
+        this.tapeContainerEl.append(this.tapeSliderNodeRef);
     }
     parse(): HTMLElement {
         const node =this.makeElementNode();
@@ -35,6 +38,11 @@ export class TapeSlider implements IParseable {
         node.setAttribute('class','ts-tapeSlider-container');
         return node;
     }
-
+    startMove(){
+        rxJs.interval(100).subscribe(e=>{
+            console.log(this.tapeSliderNodeRef);
+            
+        });
+    }
 }
 
