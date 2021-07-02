@@ -7,13 +7,15 @@ export class TapeSliderItem implements IParseable {
         this.data = data;
     }
     makeElementNode(): HTMLElement {
-        throw new Error("Method not implemented.");
+        const node = document.createElement('span');
+        node.setAttribute('class','.ts-tapeSlider-item');
+        return node;
     }
     parse(): HTMLElement {
-        const node = document.createElement('span');
+        const node = this.makeElementNode();
         node.innerText = this.data.text;
         return node;
     }
-    
+
 
 }

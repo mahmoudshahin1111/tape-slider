@@ -1,8 +1,16 @@
 @import "./variables";
 
-.ts-tapeSliderContainer{
-    width: 100;
-    min-height: calc(50px + 0.5rem);
-    position: relative;
-    
+.ts-tapeSlider-container {
+  width: 100;
+  min-height: calc(50px + 0.5rem);
+  position: relative;
+  border: 1px solid green;
+  overflow-y: hidden;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .ts-tapeSlider-item {
+    border: 1px solid red;
+  }
 }

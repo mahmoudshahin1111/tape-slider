@@ -4,7 +4,7 @@ import { ITapeSliderData } from './api/ITapeSliderData';
 import { TapeSliderItem } from './TapeSliderItem';
 import { ITapeSliderOptions } from './api/ITapeSliderOptions';
 export class TapeSlider implements IParseable {
-    private data: ITapeSliderData;
+    private options: ITapeSliderOptions;
     private selector: string;
     private tapeContainerEl: JQuery<HTMLElement>;
     private booted: boolean = false;
@@ -12,10 +12,9 @@ export class TapeSlider implements IParseable {
 
     }
 
-    boot(options: ITapeSliderOptions) {
-        debugger
-        this.selector = options.selector;
-        this.data = options.data;
+    boot(selector:string,options: ITapeSliderOptions) {
+        this.selector = selector
+        this.options = options;
         this.tapeContainerEl = $(this.selector);
         this.booted = true;
         this.render();
@@ -26,14 +25,14 @@ export class TapeSlider implements IParseable {
     }
     parse(): HTMLElement {
         const node =this.makeElementNode();
-        for (let i = 0; i < this.data.itemsData.length; i++) {
-            node.appendChild(new TapeSliderItem(this.data.itemsData[i]).parse());
+        for (let i = 0; i < this.options.data.itemsData.length; i++) {
+            node.appendChild(new TapeSliderItem(this.options.data.itemsData[i]).parse());
         }
         return node;
     }
     makeElementNode():HTMLElement{
         const node =  document.createElement('div');
-        node.setAttribute('class','ts-tapSlider-container');
+        node.setAttribute('class','ts-tapeSlider-container');
         return node;
     }
 
