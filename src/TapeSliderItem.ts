@@ -1,15 +1,19 @@
-import { IRenderable } from "./contract/IRenderable";
+import { IParseable } from "./contract/IParseable";
 import { ITapeSliderItemData } from "./api/ITapeSliderItemData";
 
-export class TapeSliderItem implements IRenderable{
+export class TapeSliderItem implements IParseable {
     private data;
-    constructor(data:ITapeSliderItemData){
-        this.data =data;
+    constructor(data: ITapeSliderItemData) {
+        this.data = data;
     }
-    render(): HTMLElement {
+    makeElementNode(): HTMLElement {
+        throw new Error("Method not implemented.");
+    }
+    parse(): HTMLElement {
         const node = document.createElement('span');
         node.innerText = this.data.text;
         return node;
     }
-   
+    
+
 }

@@ -1,4 +1,4 @@
-import { IRenderable } from "../contract/IRenderable";
+import { IParseable } from "../contract/IParseable";
 
 export interface ITapeSliderItemData{
     text:string;
