@@ -9,14 +9,14 @@ export class TapeSlider implements IParseable {
     private options: ITapeSliderOptions;
     private selector: string;
     private tapeContainerEl: JQuery<HTMLElement>;
-    private booted: boolean = false;
     private moveSub: rxJs.Subscription;
+    private hold: boolean = false;
     constructor(selector: string, options: ITapeSliderOptions) {
         this.selector = selector
         this.options = options;
         this.tapeContainerEl = $(this.selector);
-        this.booted = true;
         this.render();
+        this.registerElementListeners();
         this.start();
     }
     private render() {
@@ -35,15 +35,41 @@ export class TapeSlider implements IParseable {
         node.setAttribute('class', 'ts-tapeSlider-container');
         return node;
     }
+    private registerElementListeners() {
+        document.addEventListener('mouseup', (e: MouseEvent) => this.onMouseUp(e));
+        this.tapeSliderNodeRef.addEventListener('mousedown', (e: MouseEvent) => this.onMouseDown(e));
+        this.tapeSliderNodeRef.addEventListener('mousemove', (e: MouseEvent) => this.onMouseMove(e));
+    }
     start() {
-        this.moveSub = rxJs.interval(100).subscribe(e => {
-            console.log(this.tapeSliderNodeRef.scrollBy({ left: 1 }));
+        this.moveSub = rxJs.interval(this.getSpeed()).subscribe(e => {
+            this.tapeSliderNodeRef.scrollBy({ left: 1 });
+            if (this.isStartToEnd()) {
+                this.restart();
+            }
         });
+    }
+    private getSpeed() {
+        return this.options.speed ? this.options.speed : 100;
+    }
+    private isStartToEnd() {
+        return (this.tapeSliderNodeRef.scrollLeft + this.tapeSliderNodeRef.clientWidth + (this.tapeSliderNodeRef.clientWidth / 2)) >= this.tapeSliderNodeRef.scrollWidth;
+    }
+    private onMouseDown(e: MouseEvent) {
+        this.hold = true;
+        this.stop();
+    }
+    private onMouseMove(e: MouseEvent) {
+        if (!this.hold) return;
+        this.tapeSliderNodeRef.scrollBy({ left: -e.movementX });
+    }
+    private onMouseUp(e: MouseEvent) {
+        this.hold = false;
+        this.start();
     }
     stop() {
         this.moveSub.unsubscribe();
     }
-    reset() {
+    restart() {
         this.tapeSliderNodeRef.scrollTo({ left: 0 });
     }
 }
