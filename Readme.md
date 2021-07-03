@@ -5,13 +5,12 @@ with simple tool to apply in only 2 steps
 
 ## npm
 
-> npm install tape-slider
+> npm i tap-slider
 
 # versions
 
-|         |     |
 | ------- | --: |
-| V 0.1.0 |  ✅ |
+| V 0.1.0 | ✅ |
 
 # How To Use ⁉
 
@@ -65,9 +64,7 @@ t.onTick().subscribe((tick) => {
 t.boot();
 ```
 
-## Customize
-
-### style
+## Customize Style
 
 ```css
 .ts-tapeSlider-container {
