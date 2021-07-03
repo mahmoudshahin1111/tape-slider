@@ -9,11 +9,12 @@ export class TapeSliderOptions {
         this.validator = tapeSliderOptionsValidator ? tapeSliderOptionsValidator : new TapeSliderOptionValidator(this.options);
     }
     validateOptions(){
-        if(this.validator.validate()){
+        if(!this.validator.validate()){
             throw {message:"options invalid",errors:this.validator.getErrors()};
         }
     }
     getSpeed(): number {
+
         if ((100 / this.options.speed) <= 5) {
             return 5;
         }

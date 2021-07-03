@@ -3,7 +3,7 @@ import { ITapeSliderOptions } from "./api/ITapeSliderOptions";
 import { IValidatorError } from "./api/IValidatorError";
 
 export class TapeSliderOptionValidator {
-    private validationErrors: IValidatorError[];
+    private validationErrors: IValidatorError[] = [];
     private options: ITapeSliderOptions;
     constructor(options: ITapeSliderOptions) {
         this.options = options;
@@ -27,10 +27,13 @@ export class TapeSliderOptionValidator {
         return this.validationErrors;
     }
     private shouldAppendToErrors(validatorError: IValidatorError | null) {
-        if (validatorError != null) return true;
+        if (validatorError !== null) return true;
         return false;
     }
     private validateSpeed(speed: number): IValidatorError | null {
+        if(speed <1  || speed > 10){
+            return {name:'speed',error:'speed must be between 1 and 10'};
+        }
         return null;
     }
     private validateData(data: ITapeSliderData): IValidatorError | null {

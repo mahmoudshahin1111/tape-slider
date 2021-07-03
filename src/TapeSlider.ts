@@ -24,8 +24,6 @@ export class TapeSlider {
     }
     private render() {
         this.tapeSliderNodeRef = this.parse();
-        console.log(this.selector);
-
         $(this.selector).append(this.tapeSliderNodeRef);
     }
     private parse(): HTMLElement {
@@ -46,8 +44,12 @@ export class TapeSlider {
         this.tapeSliderNodeRef.addEventListener('mousemove', (e: MouseEvent) => this.onMouseMove(e));
     }
     start() {
+        if (this.moveSub) {
+            this.moveSub.unsubscribe();
+        }
+
         this.moveSub = rxJs.interval(this.tapeSliderOptions.getSpeed()).subscribe(e => {
-            $(this.selector).scrollLeft(1);
+            this.tapeSliderNodeRef.scrollBy({ left: 1 });
             if (this.isStartToEnd()) {
                 this.restart();
             }
@@ -61,10 +63,8 @@ export class TapeSlider {
         this.stop();
     }
     private onMouseMove(e: MouseEvent) {
-        console.log(this.selector);
-
         if (!this.hold) return;
-        $(this.selector).scrollLeft(-e.movementX);
+        this.tapeSliderNodeRef.scrollBy({ left: -e.movementX });
     }
     private onMouseUp(e: MouseEvent) {
         this.hold = false;
