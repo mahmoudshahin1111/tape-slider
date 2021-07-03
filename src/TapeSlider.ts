@@ -8,6 +8,10 @@ export class TapeSlider {
     private moveSub: rxJs.Subscription;
     private hold: boolean = false;
     private tapeSliderOptions: TapeSliderOptions;
+    private startedEvent: rxJs.Subject<TapeSlider> = new rxJs.Subject<TapeSlider>();
+    private tickEvent: rxJs.Subject<number> = new rxJs.Subject<number>();
+    private stoppedEvent: rxJs.Subject<TapeSlider> = new rxJs.Subject<TapeSlider>();
+
     constructor(selector: string, tapeSliderOptions: TapeSliderOptions) {
         this.selector = selector
         this.tapeSliderOptions = tapeSliderOptions;
@@ -19,8 +23,19 @@ export class TapeSlider {
             this.registerElementListeners();
             this.start();
         } catch (e) {
-            console.log(e);
+            console.error(`%c`, e, {
+                'font-size': '15px'
+            });
         }
+    }
+    onStarted() {
+        return this.startedEvent.asObservable();
+    }
+    onStopped() {
+        return this.stoppedEvent.asObservable();
+    }
+    onTick() {
+        return this.tickEvent.asObservable();
     }
     private render() {
         this.tapeSliderNodeRef = this.parse();
@@ -48,12 +63,14 @@ export class TapeSlider {
             this.moveSub.unsubscribe();
         }
 
-        this.moveSub = rxJs.interval(this.tapeSliderOptions.getSpeed()).subscribe(e => {
+        this.moveSub = rxJs.interval(this.tapeSliderOptions.getSpeed()).subscribe(tick => {
             this.tapeSliderNodeRef.scrollBy({ left: 1 });
             if (this.isStartToEnd()) {
                 this.restart();
             }
+            this.tickEvent.next(tick);
         });
+        this.startedEvent.next(this);
     }
     private isStartToEnd() {
         return (this.tapeSliderNodeRef.scrollLeft + this.tapeSliderNodeRef.clientWidth + (this.tapeSliderNodeRef.clientWidth / 2)) >= this.tapeSliderNodeRef.scrollWidth;
@@ -72,6 +89,7 @@ export class TapeSlider {
     }
     stop() {
         this.moveSub.unsubscribe();
+        this.stoppedEvent.next(this);
     }
     restart() {
         this.tapeSliderNodeRef.scrollTo({ left: 0 });
