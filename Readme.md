@@ -1,7 +1,7 @@
 # TapeSlider
 
 make your page more interactive by let client read last notifications and news about your site
-with simple tool to confirm in only 2 steps
+with simple tool to apply in only 2 steps
 
 ## HTML
 
@@ -16,7 +16,7 @@ const t = tapeSlider.make(".ts-tap", options);
 t.boot();
 ```
 
-# Events
+## Events
 
 ```javascript
 const options = { speed: 1, data: { itemsData: data } };
