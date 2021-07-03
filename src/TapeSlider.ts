@@ -2,24 +2,31 @@ import * as $ from 'jquery';
 import { TapeSliderItem } from './TapeSliderItem';
 import * as rxJs from 'rxjs';
 import { TapeSliderOptions } from './TapeSliderOptions';
-export class TapeSlider  {
+export class TapeSlider {
     private tapeSliderNodeRef: HTMLElement;
     private selector: string;
-    private tapeContainerEl: JQuery<HTMLElement>;
     private moveSub: rxJs.Subscription;
     private hold: boolean = false;
     private tapeSliderOptions: TapeSliderOptions;
     constructor(selector: string, tapeSliderOptions: TapeSliderOptions) {
         this.selector = selector
         this.tapeSliderOptions = tapeSliderOptions;
-        this.tapeContainerEl = $(this.selector);
-        this.render();
-        this.registerElementListeners();
-        this.start();
+    }
+    boot() {
+        try {
+            this.tapeSliderOptions.validateOptions();
+            this.render();
+            this.registerElementListeners();
+            this.start();
+        } catch (e) {
+            console.log(e);
+        }
     }
     private render() {
         this.tapeSliderNodeRef = this.parse();
-        this.tapeContainerEl.append(this.tapeSliderNodeRef);
+        console.log(this.selector);
+
+        $(this.selector).append(this.tapeSliderNodeRef);
     }
     private parse(): HTMLElement {
         const node = this.makeElementNode();
@@ -40,7 +47,7 @@ export class TapeSlider  {
     }
     start() {
         this.moveSub = rxJs.interval(this.tapeSliderOptions.getSpeed()).subscribe(e => {
-            this.tapeSliderNodeRef.scrollBy({ left: 1 });
+            $(this.selector).scrollLeft(1);
             if (this.isStartToEnd()) {
                 this.restart();
             }
@@ -54,8 +61,10 @@ export class TapeSlider  {
         this.stop();
     }
     private onMouseMove(e: MouseEvent) {
+        console.log(this.selector);
+
         if (!this.hold) return;
-        this.tapeSliderNodeRef.scrollBy({ left: -e.movementX });
+        $(this.selector).scrollLeft(-e.movementX);
     }
     private onMouseUp(e: MouseEvent) {
         this.hold = false;

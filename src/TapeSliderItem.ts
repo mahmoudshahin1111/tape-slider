@@ -1,7 +1,7 @@
-import { IParseable } from "./contract/IParseable";
+
 import { ITapeSliderItemData } from "./api/ITapeSliderItemData";
 
-export class TapeSliderItem implements IParseable {
+export class TapeSliderItem {
     private data;
     constructor(data: ITapeSliderItemData) {
         this.data = data;
