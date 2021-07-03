@@ -9,30 +9,39 @@ with simple tool to apply in only 2 steps
 
 # How To Use ⁉
 
-## style
-
 ```html
-<link rel="stylesheet" href="./dist/style/_index.css" />
-```
+<head>
+  <link rel="stylesheet" href="./node_modules/tape-slider/dist/style/_index.css"
+  />
+</head>
 
-## HTML
+<body>
 
-```html
-<div class="ts-tap"></div>
-```
 
-## Javascript
+  <div class="ts-tap"></div>
 
-```javascript
-/*data must be in that form*/
-const data = [
-  {
-    text: "test",
-  },
-];
-const options = { speed: 1, data: { itemsData: data } };
-const t = tapeSlider.make(".ts-tap", options);
-t.boot();
+  <script src="./node_modules/tape-slider/dist/index.js"></script>
+
+  <script>
+    /* Generate Fake Data */
+    const data = [];
+    for (let index = 0; index < 100; index++) {
+      const element = {
+        text: "news" + index,
+      };
+      data.push(element);
+    }
+    /* */
+
+    
+    /* Here The Code */
+    const options = { speed: 1, data: { itemsData: data } };
+    const t = tapeSlider.make(".ts-tap", options);
+    t.boot();
+    /* */
+    
+  </script>
+</body>
 ```
 
 # Advanced
