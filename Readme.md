@@ -7,11 +7,6 @@ with simple tool to apply in only 2 steps
 
 > npm i tap-slider
 
-# versions
-
-| ------- | --: |
-| V 0.1.0 | ✅ |
-
 # How To Use ⁉
 
 ## style
