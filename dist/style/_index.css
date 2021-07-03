@@ -1,0 +1,30 @@
+.ts-tapeSlider-container {
+  width: 100;
+  position: relative;
+  border: 1px solid black;
+  overflow-y: hidden;
+  overflow-x: auto;
+  padding-right: 80vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  gap: 0.2rem;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 4px;
+}
+.ts-tapeSlider-container::-webkit-scrollbar {
+  display: none;
+}
+.ts-tapeSlider-container .ts-tapeSlider-item {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.2rem;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+/*# sourceMappingURL=_index.css.map */
