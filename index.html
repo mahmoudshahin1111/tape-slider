@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="./dist/style/_index.css" />
+</head>
+
+<body>
+    <div class="ts-tap">
+
+    </div>
+    <div class="ts-tap2">
+
+    </div>
+    <script src="./dist/index.js"></script>
+    <script src="./mocks.js"></script>
+    <script>
+        const t = tapeSlider.make(".ts-tap", { speed: 1, data: { itemsData: data } });
+
+        t.onStarted().subscribe((e) => {
+            console.log("started");
+        });
+        t.onStopped().subscribe((e) => {
+            console.log("stopped");
+        });
+        t.onTick().subscribe((tick) => {
+            console.log("tick" + tick);
+        });
+
+        t.boot();
+
+        const t2 = tapeSlider.make(".ts-tap2", { speed: 10, data: { itemsData: data } });
+
+        t2.onStarted().subscribe((e) => {
+            console.log("started");
+        });
+        t2.onStopped().subscribe((e) => {
+            console.log("stopped");
+        });
+        t2.onTick().subscribe((tick) => {
+            console.log("tick" + tick);
+        });
+
+        t2.boot();
+    </script>
+</body>
+
+</html>

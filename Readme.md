@@ -3,18 +3,45 @@
 make your page more interactive by let client read last notifications and news about your site
 with simple tool to apply in only 2 steps
 
+## npm
+
+> npm install tape-slider
+
+# versions
+
+|         |     |
+| ------- | --: |
+| V 0.1.0 |  ✅ |
+
+# How To Use ⁉
+
+## style
+
+```html
+<link rel="stylesheet" href="./dist/style/_index.css" />
+```
+
 ## HTML
 
-`<div class="ts-tap"></div>`
+```html
+<div class="ts-tap"></div>
+```
 
 ## Javascript
 
-
 ```javascript
+/*data must be in that form*/
+const data = [
+  {
+    text: "test",
+  },
+];
 const options = { speed: 1, data: { itemsData: data } };
 const t = tapeSlider.make(".ts-tap", options);
 t.boot();
 ```
+
+# Advanced
 
 ## Events
 
@@ -36,6 +63,28 @@ t.onTick().subscribe((tick) => {
 });
 
 t.boot();
+```
+
+## Customize
+
+### style
+
+```css
+.ts-tapeSlider-container {
+  /* You can override Style */
+}
+.ts-tapeSlider-container .ts-tapeSlider-item {
+  /* You can override Style */
+}
+```
+
+## Options
+
+```javascript
+var options = {
+  speed:/* slider speed from 1 to 15 */
+  data:[/* Array of objects as {text:"👌"}*/]
+}
 ```
 
 Simplest and Easiest 👌💖👏

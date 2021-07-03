@@ -5,7 +5,7 @@
   "main": "./",
   "scripts": {
     "test": "jest ./dist",
-    "build":"sass ./src/style/_index.scss ./dist/style/_index.css & npx webpack",
+    "build": "sass ./src/style/_index.scss ./dist/style/_index.css & npx webpack",
     "watch": "concurrently \"sass ./src/style/_index.scss ./dist/style/_index.css --watch\" \"npx webpack --watch\""
   },
   "repository": {
@@ -16,9 +16,16 @@
     "tape-slider",
     "tape-news",
     "slider",
-    "news-slider"
+    "news-slider",
+    "tape",
+    "website-tools",
+    "web-development"
   ],
-  "author": "mahmoudshahin1111@gmail.com",
+  "author": {
+    "name": "Mahmoud Shahin",
+    "email": "mahmoudshahin1111@gmail.com",
+    "url": "https://www.mahmoudshahin.net/"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mahmoudshahin1111/tape-slider/issues"
