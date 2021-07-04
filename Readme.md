@@ -2,12 +2,17 @@
 
 make your page more interactive by let client read last notifications and news about your site
 with simple tool to apply in simple way ... let's start
+## Demo
 
-## npm
+In progress ... ⚙
+
+## Installation
+You can use either the npm  command-line tool to install packages.
+## NPM
 
 > npm i tap-slider
 
-# How To Use ⁉
+# Usage ⁉
 
 ```html
 <head>
@@ -94,3 +99,11 @@ var options = {
 ```
 
 Simplest and Easiest 👌💖👏
+
+## Contribution
+
+I welcome you to fork and add more features into it. If you have any bugs or feature request, please create an issue at [github repository](https://github.com/mahmoudshahin1111/tape-slider/issues).
+
+## License
+
+MIT
