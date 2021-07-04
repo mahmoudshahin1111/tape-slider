@@ -1,7 +1,7 @@
 {
   "name": "tape-slider",
-  "version": "0.1.1",
-  "description": "add slider tap for your site",
+  "version": "0.1.2",
+  "description": "simple way ever to make your website interactive add tape slider for your website",
   "main": "./",
   "scripts": {
     "test": "jest ./dist",

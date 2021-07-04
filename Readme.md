@@ -1,7 +1,7 @@
 # TapeSlider
 
 make your page more interactive by let client read last notifications and news about your site
-with simple tool to apply in only 2 steps
+with simple tool to apply in simple way ... let's start
 
 ## npm
 
@@ -11,17 +11,21 @@ with simple tool to apply in only 2 steps
 
 ```html
 <head>
-  <link rel="stylesheet" href="./node_modules/tape-slider/dist/style/_index.css"
+  <!-- Add Style -->
+  <link
+    rel="stylesheet"
+    href="./node_modules/tape-slider/dist/style/_index.css"
   />
 </head>
 
 <body>
-
-
+  <!-- Add Element -->
   <div class="ts-tap"></div>
 
+  <!-- import tool -->
   <script src="./node_modules/tape-slider/dist/index.js"></script>
 
+  <!-- Let's start 👏 -->
   <script>
     /* Generate Fake Data */
     const data = [];
@@ -33,13 +37,14 @@ with simple tool to apply in only 2 steps
     }
     /* */
 
-    
     /* Here The Code */
+    // set options
     const options = { speed: 1, data: { itemsData: data } };
+    // create tool object
     const t = tapeSlider.make(".ts-tap", options);
+    // run tool.
     t.boot();
     /* */
-    
   </script>
 </body>
 ```
