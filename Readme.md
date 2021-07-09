@@ -5,7 +5,7 @@ with simple tool to apply in simple way ... let's start
 ## Demo
 
 
-![preview](https://lh3.googleusercontent.com/pw/AM-JKLXiXMJOgMqylp7NBDBgAV9bNgu6YeYjGtii42S9MkhS7KYyqXyRqIB2HrFrIO3H7RLkYIpExb8onjX8wxpND6JYzBmBykSEcssM6EqJExf1vAuUPyvoqID-4CJyyOEokrcuKUV28G93RtyqCohjSd7t=w1280-h720-no?authuser=0)
+![preview](https://lh3.googleusercontent.com/pw/AM-JKLUsTK1L0GGnWwQVFOO8oy2OFCWElc8GSEzf150h_YHiOAPzkKv7eNRZIgzamwrmf1c3X8ln_sbE_P6u14CXSYCDbozXtTlhxNELr8pEJIK3EPpfmw2B_XayjW3LHGsVtqavVB5JxHrwsy-6l-vMYR59=w1920-h582-no?authuser=0)
 ## Installation
 You can use either the npm  command-line tool to install packages.
 ## NPM
