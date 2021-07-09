@@ -1,5 +1,7 @@
 # TapeSlider
 
+[![npm version](https://badge.fury.io/js/tape-slider.svg)](https://badge.fury.io/js/tape-slider)
+
 make your page more interactive by let client read last notifications and news about your site
 with simple tool to apply in simple way ... let's start
 ## Demo
