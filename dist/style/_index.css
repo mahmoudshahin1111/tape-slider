@@ -1,10 +1,9 @@
 .ts-tapeSlider-container {
-  width: 100;
+  width: 100%;
   position: relative;
   border: 1px solid black;
   overflow-y: hidden;
   overflow-x: auto;
-  padding-right: 80vw;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

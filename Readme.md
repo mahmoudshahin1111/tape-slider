@@ -4,8 +4,10 @@ make your page more interactive by let client read last notifications and news a
 with simple tool to apply in simple way ... let's start
 ## Demo
 
-In progress ... ⚙
 
+![preview](https://lh3.googleusercontent.com/pw/AM-JKLWzH3QAYzS6weNmCcn9nVuS1oAuOukxPFAeCdpTP5rJMqH0CGDU0Cg6RUrqs4fUd4sukOjoDp8e8kj17KGN2l4UPs6a9eF63q8OjY8jEzNLOfYUiiqtJ_k50aiquvoCIVkRdppWbaaW_1T677et48-Y=w1920-h582-no?authuser=0)
+
+![preview](https://lh3.googleusercontent.com/pw/AM-JKLXiXMJOgMqylp7NBDBgAV9bNgu6YeYjGtii42S9MkhS7KYyqXyRqIB2HrFrIO3H7RLkYIpExb8onjX8wxpND6JYzBmBykSEcssM6EqJExf1vAuUPyvoqID-4CJyyOEokrcuKUV28G93RtyqCohjSd7t=w1280-h720-no?authuser=0)
 ## Installation
 You can use either the npm  command-line tool to install packages.
 ## NPM
@@ -14,6 +16,9 @@ You can use either the npm  command-line tool to install packages.
 
 # Usage ⁉
 
+![install](https://lh3.googleusercontent.com/pw/AM-JKLW2NO_NoEBkYJ9iTLM4ciKnyR0vyoVxFpho_y_kFE5MuEiknsCN6dfTsoTkYKGOc4fnapemJl_d0KtqtlmQhExLQMKb_46-cQ11KXfzutfkyrx1laVn5VrOLV_5VHKXY9uKQ7gseP8KUS-wANeCcNw8=w944-h866-no?authuser=0)
+
+![preview](https://lh3.googleusercontent.com/pw/AM-JKLUsTK1L0GGnWwQVFOO8oy2OFCWElc8GSEzf150h_YHiOAPzkKv7eNRZIgzamwrmf1c3X8ln_sbE_P6u14CXSYCDbozXtTlhxNELr8pEJIK3EPpfmw2B_XayjW3LHGsVtqavVB5JxHrwsy-6l-vMYR59=w1920-h582-no?authuser=0)
 ```html
 <head>
   <!-- Add Style -->
@@ -79,6 +84,11 @@ t.boot();
 ```
 
 ## Customize Style
+
+![customize css](https://lh3.googleusercontent.com/pw/AM-JKLUgyA_iovZO41YxWG2a-m93SB6IbBICxm2THqyoqhxdpmG_5ufXgZg6wB2WNDgKPH18UXhZy7rhNnKUPZrUUmbAlE1cPw9fWxR4to4KlB64QVtsYhYAOfryFbGC8lfQtG-lKJWCvNu91zzaSG4e6LMV=w952-h864-no?authuser=0)
+
+![preview](https://lh3.googleusercontent.com/pw/AM-JKLUsTK1L0GGnWwQVFOO8oy2OFCWElc8GSEzf150h_YHiOAPzkKv7eNRZIgzamwrmf1c3X8ln_sbE_P6u14CXSYCDbozXtTlhxNELr8pEJIK3EPpfmw2B_XayjW3LHGsVtqavVB5JxHrwsy-6l-vMYR59=w1920-h582-no?authuser=0)
+
 
 ```css
 .ts-tapeSlider-container {
